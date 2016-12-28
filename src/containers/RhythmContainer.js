@@ -2,19 +2,21 @@ import React, {PropTypes} from 'react';
 import {connect} from 'react-redux';
 //import {bindActionCreators} from 'redux';
 //import * as actions from '../actions/fuelSavingsActions';
-//import FuelSavingsForm from '../components/FuelSavingsForm';
+import {Meter} from './Meter';
 
 export const RhythmContainer = () => {
   return (
     <div>
-    Gianniss
-      </div>
+      This will be a 4/4 rhythm
+      <Meter />
+
+    </div>
 
   );
 };
 
 RhythmContainer.propTypes = {
-  actions: PropTypes.object.isRequired,
+  actions: PropTypes.object,
 };
 
 

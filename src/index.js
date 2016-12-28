@@ -1,18 +1,12 @@
-// Set up your application entry point here...Skip to content
-import React from 'react';
-import {render} from 'react-dom';
-import { Provider } from 'react-redux';
-import { Router, browserHistory } from 'react-router';
-import configureStore from './store/configureStore';
-import { syncHistoryWithStore } from 'react-router-redux';
+import React, { Component } from 'react';
+import { render } from 'react-dom';
+import { RhythmContainer } from './containers/RhythmContainer';
+import './styles/styles.scss'; // Yep, that's right. You can import SASS/CSS files too! Webpack will run the associated loader and plug this into the page.
 
-const store = configureStore();
+class Home extends Component {
+    render(){
+        return <RhythmContainer/>;
+    }
+}
 
-// Create an enhanced history that syncs navigation events with the store
-const history = syncHistoryWithStore(browserHistory, store);
-
-render(
-  <Provider store={store}>
-    <Router history={history}/>
-  </Provider>, document.getElementById('app')
-);
+render(<Home />, document.getElementById('app'));
