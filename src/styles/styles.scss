@@ -3,6 +3,13 @@ $vin-blue: #5bb7db;
 $vin-green: #60b044;
 $vin-red: #ff0000;
 
+tr.top{
+  width: 50px;
+  max-width: 50px;
+  height: 30px;
+  border: none ;
+}
+
 tr {
   border: 1px solid green ;
   width: 30px;

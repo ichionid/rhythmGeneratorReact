@@ -1,10 +1,9 @@
 import React, {PropTypes} from 'react';
-import {connect} from 'react-redux';
 
 export const Note = (props) => {
 return (
-    <div className={props.value}>
-    </div>
+    <tr className={props.value}>
+    </tr>
   );
 };
 
@@ -13,11 +12,4 @@ Note.propTypes = {
 };
 
 
-/*function mapDispatchToProps(dispatch) {
-  return {
-    actions: bindActionCreators(actions, dispatch)
-  };
-}*/
-
-export default connect(
-)(Note);
+export default Note;

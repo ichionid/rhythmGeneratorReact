@@ -8,9 +8,12 @@ import initialState from './initialState';
 // create a copy of the state passed and set new values on the copy.
 // Note that I'm using Object.assign to create a copy of current state
 // and update values on the copy.
-export default function gameDataReducer(state = initialState.rhythm, action) {
+export default function rhythmReducer(state = initialState.rhythm, action) {
   let newState = objectAssign({}, state);
+  console.log(action);
   console.log(action.type);
-
+  /*switch (action.type) {
+    console.log("giannis");
+  }*/
   return newState;
 }

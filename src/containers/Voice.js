@@ -1,18 +1,19 @@
 import React, {PropTypes} from 'react';
-import {connect} from 'react-redux';
 import {Note} from '../components/Note';
 
 export const Voice = (props) => {
-let rows = [];
-for (let i=0; i < 16; i++) {
-    rows.push(<tr  key={i}><Note value={true}/></tr>);
+
+  let Notes = [];
+  let key=0;
+  for (let prop in props.pattern) {
+    Notes.push(<Note key={key++} value={props.pattern[prop].value}/>);
 }
 return (
     <div>
       <table className={props.voiceType}>
-      {props.voiceType}
       <tbody>
-       {rows}
+       <tr className="top"><td>{props.voiceType}</td></tr>
+       {Notes}
       </tbody>
     </table>
     </div>
@@ -21,14 +22,10 @@ return (
 
 Voice.propTypes = {
   voiceType: PropTypes.string.isRequired,
+  pattern: PropTypes.array,
+  changeValueAction: PropTypes.func
 };
 
 
-/*function mapDispatchToProps(dispatch) {
-  return {
-    actions: bindActionCreators(actions, dispatch)
-  };
-}*/
 
-export default connect(
-)(Voice);
+export default Voice;

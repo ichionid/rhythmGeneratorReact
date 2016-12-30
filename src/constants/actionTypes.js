@@ -1,0 +1,1 @@
+export const TOGGLE_NOTE_VALUE = 'TOGGLE_NOTE_VALUE';
