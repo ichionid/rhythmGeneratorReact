@@ -1,7 +1,19 @@
 import * as types from '../constants/actionTypes';
+// example of a thunk using the redux-thunk middleware
+export function saveFuelSavings() {
+	console.log("222");
+  return function (dispatch) {
+    // thunks allow for pre-processing actions, calling apis, and dispatching multiple actions
+    // in this case at this point we could call a service that would persist the fuel savings
+    return dispatch({
+      type: types.TOGGLE_NOTE_VALUE
+    });
+  };
+}
 
-export function toggleNoteValue(voice,noteIndex) {
-  return {type: types.TOGGLE_NOTE_VALUE, voice, noteIndex};
+export function toggleNoteValue() {
+	console.log("111");
+  return {type: types.TOGGLE_NOTE_VALUE};
 }
 /*export function increaseHomeScore() {
   return {type: types.INCREASE_HOME_SCORE};

@@ -8,5 +8,5 @@ const store = configureStore();
 
 render(
   <Provider store={store}>
-    <RhythmContainer rhythm={store.getState().rhythm}/>
+    <RhythmContainer store={store} rhythm={store.getState().rhythm}/>
   </Provider>, document.getElementById('app'));

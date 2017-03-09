@@ -18,3 +18,11 @@ tr {
   display: table-cell;
 }
 
+tr.true {
+  background-color: black;
+}
+
+tr.false {
+  background-color: white;
+}
+

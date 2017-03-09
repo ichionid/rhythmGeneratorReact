@@ -5,15 +5,16 @@ import * as actions from '../actions/rhythmActions';
 import {Meter} from './Meter';
 
 export const RhythmContainer = (props) => {
-  console.log("***RhythmContainer***");
-  console.log(props.rhythm.meters.length);
   let rows = [];
   for (let i=0; i < props.rhythm.meters.length; i++) {
-    console.log(props.rhythm.meters[i]);
     rows.push(<Meter key={i} actions={actions} rhythm={props.rhythm.meters[i]}/>);
   }
+  // @todo pass note id so that we can flip it
+  const handleClick = () => {
+    return props.store.dispatch(actions.toggleNoteValue());
+  };
   return (
-    <div>
+    <div onClick={handleClick}>
       This will be a 4/4 rhythm
       {rows}
     </div>
@@ -23,6 +24,7 @@ export const RhythmContainer = (props) => {
 
 RhythmContainer.propTypes = {
   rhythm: PropTypes.object.isRequired,
+  store: PropTypes.object.isRequired,
 };
 
 function mapStateToProps(state) {
